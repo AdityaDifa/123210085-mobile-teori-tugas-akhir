@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="abuAbu">#D2D2D2</color>
+    <color name="abuAbuBg">#F9F9F9</color>
+    <color name="textAbuAbu">#595959</color>
+    <color name="merah">#DF6969</color>
+    <color name="hijau">#3DE901</color>
+    <color name="biru">#0000FF</color>
+    <color name="birumuda">#64B5F6</color>
+    <color name="hijaumuda">#81C784</color>
+    <color name="lightGrey">#F5F5F5</color>
+    <color name="darkGrey">#424242</color>
+    <color name="birumuda2">#2690E4</color>
+
+</resources>

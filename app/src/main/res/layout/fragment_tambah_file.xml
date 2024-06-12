@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:padding="16dp"
+    android:background="@color/lightGrey"
+    tools:context=".HalamanUtama.TambahFile">
+
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/teksJudul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masukkan Nama"
+        android:textSize="20sp"
+        android:textColor="@color/darkGrey"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/inputNama"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <!-- Input Field -->
+    <EditText
+        android:id="@+id/inputNama"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nama"
+        android:padding="10dp"
+        android:background="@drawable/rounded_edit_text"
+        android:textColor="@color/darkGrey"
+        android:textColorHint="@color/abuAbu"
+        android:maxLength="15"
+        app:layout_constraintTop_toBottomOf="@+id/teksJudul"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <!-- Cancel Button -->
+    <Button
+        android:id="@+id/btnBatal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_button_red"
+        android:text="Batal"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/inputNama"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnBuat"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <!-- Create Button -->
+    <Button
+        android:id="@+id/btnBuat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_button_light_green"
+        android:text="Buat"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/inputNama"
+        app:layout_constraintStart_toEndOf="@+id/btnBatal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
