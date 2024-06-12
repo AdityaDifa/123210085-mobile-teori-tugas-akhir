@@ -73,6 +73,16 @@
                 android:background="#0000FF"
                 android:text="Register"
                 android:textColor="#FFFFFF" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="Dikarenakan masa trial database sudah habis jadi langsung login saja"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="normal" />
         </LinearLayout>
 
     </ScrollView>

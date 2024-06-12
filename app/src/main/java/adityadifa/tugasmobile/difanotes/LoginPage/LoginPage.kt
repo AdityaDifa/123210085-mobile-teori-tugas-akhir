@@ -32,82 +32,87 @@ class LoginPage : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.loginButton.setOnClickListener{
-            val username = binding.username.text.toString().trim()
-            val password = binding.password.text.toString().trim()
+//            val username = binding.username.text.toString().trim()
+//            val password = binding.password.text.toString().trim()
 
-            if (username.isEmpty() || password.isEmpty()) {
-                showToast("Username and Password masih kosong")
-                return@setOnClickListener
-            }
+//            if (username.isEmpty() || password.isEmpty()) {
+//                showToast("Username and Password masih kosong")
+//                return@setOnClickListener
+//            }
 
             lifecycleScope.launch {
-                try {
-                    val apiService = ApiConfig.getApiService()
-                    val loginData = UserModel(username, password)
-                    val successResponse = apiService.getAccount(loginData)
+//                try {
+//                    val apiService = ApiConfig.getApiService()
+//                    val loginData = UserModel(username, password)
+//                    val successResponse = apiService.getAccount(loginData)
 
-                    if (successResponse.body()?.exists == true) {
-                        val loginResponse = successResponse.body()
-                        showToast("Login Successful")
-                        val intent = Intent(it.context, MainActivity::class.java)
-                        startActivity(intent)
-                        finish()
+//                    if (successResponse.body()?.exists == true) {
+//                        val loginResponse = successResponse.body()
+//                        showToast("Login Successful")
+//                        val intent = Intent(it.context, MainActivity::class.java)
+//                        startActivity(intent)
+//                        finish()
+//
+//                    } else {
+//                        val errorBody = successResponse.errorBody()?.string()
+//                        val errorResponse = Gson().fromJson(errorBody, LoginResponse::class.java)
+//                        showToast("Login Gagal")
+//                    }
 
-                    } else {
-                        val errorBody = successResponse.errorBody()?.string()
-                        val errorResponse = Gson().fromJson(errorBody, LoginResponse::class.java)
-                        showToast("Login Gagal")
-                    }
+                    val intent = Intent(it.context, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
 
-                } catch (e: HttpException) {
-                    Log.e("LoginPage", "HttpException: ${e.message()}")
-                    showToast("Login Failed: ${e.message()}")
-                } catch (e: Exception) {
-                    Log.e("LoginPage", "Exception: ${e.message}")
-                    showToast("An error occurred: ${e.message}")
-                }
+
+//                } catch (e: HttpException) {
+//                    Log.e("LoginPage", "HttpException: ${e.message()}")
+//                    showToast("Login Failed: ${e.message()}")
+//                } catch (e: Exception) {
+//                    Log.e("LoginPage", "Exception: ${e.message}")
+//                    showToast("An error occurred: ${e.message}")
+//                }
             }
         }
 
         binding.registerButton.setOnClickListener{
-            val username = binding.username.text.toString().trim()
-            val password = binding.password.text.toString().trim()
-
-            if (username.isEmpty() || password.isEmpty()) {
-                showToast("Username and Password masih kosong")
-                return@setOnClickListener
-            }
+//            val username = binding.username.text.toString().trim()
+//            val password = binding.password.text.toString().trim()
+//
+//            if (username.isEmpty() || password.isEmpty()) {
+//                showToast("Username and Password masih kosong")
+//                return@setOnClickListener
+//            }
 
             lifecycleScope.launch {
-                try {
-                    val apiService = ApiConfig.getApiService()
-                    val loginData = UserModel(username, password)
-                    val successResponse = apiService.registerAccount(loginData)
-
-                    if (successResponse.body()?.success == true) {
-                        showToast("Register Berhasil")
-
-                    }
-                    else if(successResponse.body()?.message == "Username sudah ada"){
-                        showToast("Akun sudah terdaftar")
-                    }
-                    else {
-                        val errorBody = successResponse.errorBody()?.string()
-                        val errorResponse = Gson().fromJson(errorBody, LoginResponse::class.java)
-                        showToast("Akun sudah terdaftar")
-                    }
-
-                } catch (e: HttpException) {
-                    Log.e("LoginPage", "HttpException: ${e.message()}")
-                    showToast("Login Failed: ${e.message()}")
-                } catch (e: Exception) {
-                    Log.e("LoginPage", "Exception: ${e.message}")
-                    showToast("An error occurred: ${e.message}")
-                }
+//                try {
+//                    val apiService = ApiConfig.getApiService()
+//                    val loginData = UserModel(username, password)
+//                    val successResponse = apiService.registerAccount(loginData)
+//
+//                    if (successResponse.body()?.success == true) {
+//                        showToast("Register Berhasil")
+//
+//                    }
+//                    else if(successResponse.body()?.message == "Username sudah ada"){
+//                        showToast("Akun sudah terdaftar")
+//                    }
+//                    else {
+//                        val errorBody = successResponse.errorBody()?.string()
+//                        val errorResponse = Gson().fromJson(errorBody, LoginResponse::class.java)
+//                        showToast("Akun sudah terdaftar")
+//                    }
+//
+//                } catch (e: HttpException) {
+//                    Log.e("LoginPage", "HttpException: ${e.message()}")
+//                    showToast("Login Failed: ${e.message()}")
+//                } catch (e: Exception) {
+//                    Log.e("LoginPage", "Exception: ${e.message}")
+//                    showToast("Masa Trial database mysql sudah habis, langsung login saja")
+//                }
             }
         }
     }
-    private fun showToast(message: String?) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
+//    private fun showToast(message: String?) {
+//        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+//    }
 }
